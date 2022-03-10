@@ -1,0 +1,48 @@
+{
+    "check-coverage": false,
+    "watermarks": {
+        "lines": [
+            80,
+            95
+        ],
+        "functions": [
+            80,
+            95
+        ],
+        "branches": [
+            80,
+            95
+        ],
+        "statements": [
+            80,
+            95
+        ]
+    },
+    "reporter": [
+        "html",
+        "text-summary",
+        "json",
+        "clover",
+        "lcov"
+    ],
+    "include": [
+        "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "exclude": [
+        "src/**/*.test.{js,jsx}",
+        "src/**/webpack.config.js"
+    ],
+    "extension": [
+        ".jsx",
+        ".js",
+        ".ts",
+        "tsx"
+    ],
+    "require": [
+        "@babel/polyfill",
+        "@babel/register",
+        "./test.config.js"
+    ],
+    "cache": false,
+    "all": true
+}

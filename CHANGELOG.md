@@ -1,11 +1,12 @@
 # Changelog
 
-## [latest](https://github.com/CoMfUcIoS/simpleState/tree/latest) (2022-03-10)
+## [latest](https://github.com/CoMfUcIoS/simpleState/tree/latest) (2022-04-02)
 
 [Full Changelog](https://github.com/CoMfUcIoS/simpleState/compare/86c616d35342789a4b9f81c4f327523c5b43ad4a...latest)
 
 **Merged pull requests:**
 
+- \(MAINT\) Typescript init [\#3](https://github.com/CoMfUcIoS/simpleState/pull/3) ([CoMfUcIoS](https://github.com/CoMfUcIoS))
 - Use GH repo token in GH actions [\#2](https://github.com/CoMfUcIoS/simpleState/pull/2) ([CoMfUcIoS](https://github.com/CoMfUcIoS))
 - Init repo [\#1](https://github.com/CoMfUcIoS/simpleState/pull/1) ([CoMfUcIoS](https://github.com/CoMfUcIoS))
 

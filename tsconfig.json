@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": "src",
+      "composite": false,
+      "esModuleInterop": true,
+      "noImplicitAny": false,
+      "noUnusedParameters": true,
+      "outDir": "./dist/",
+      "paths": {
+          "utils/*": [
+              "src/utils/*"
+          ]
+      },
+      "plugins": [
+          {
+              "transform": "typescript-transform-paths"
+          }
+      ],
+      "resolveJsonModule": true,
+      "rootDir": ".",
+      "skipLibCheck": false,
+      "sourceMap": true
+  },
+  "include": [
+      "src/**/*",
+      "package.json",
+      "webpack.minimizer.ts",
+      "webpack.config.ts"
+    ],
+  "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module"
+  },
+  "ts-node": {
+      "require": [
+          "typescript-transform-paths/register",
+          "tsconfig-paths/register"
+      ],
+      "transpileOnly": true
+  }
+}

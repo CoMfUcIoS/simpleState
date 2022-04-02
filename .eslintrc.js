@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = {
   env: {
     node: true,
@@ -13,38 +11,43 @@ module.exports = {
     window: false,
     log: false,
   },
-  parser: "@babel/eslint-parser",
+  extends: [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    sourceType: "module",
     allowImportExportEverywhere: true,
+    sourceType: "module",
   },
-  extends: ["airbnb", "prettier"],
   plugins: [
     "babel",
     "react",
     "prettier",
     "json",
-    "eslint-plugin-import",
     "eslint-plugin-import-helpers",
+    "@typescript-eslint",
   ],
   rules: {
-    "arrow-parens": ["error", "as-needed"],
-    "import/no-cycle": 0,
-    "react/jsx-fragments": 0,
-    "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0,
-    "import/prefer-default-export": 0,
-    "import-helpers/order-imports": [
+    "import/extensions": [
       "error",
       {
-        newlinesBetween: "always",
-        groups: ["module", "/^~//", "/^@//"],
-        alphabetize: {
-          order: "asc",
-          ignoreCase: false,
-        },
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
       },
     ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { devDependencies: ["**/*.test.{js,ts,tsx,jsx}", "webpack.*.ts"] },
+    ],
+    "import/no-unresolved": "off",
     complexity: ["warn", 8],
     "max-params": ["warn", 5],
     "max-statements": ["warn", 15],
@@ -70,34 +73,24 @@ module.exports = {
         arrowParens: "avoid",
       },
     ],
-    "react/jsx-curly-brace-presence": 0,
-    "jsx-a11y/label-has-for": 0,
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        components: ["Link"],
-        specialLink: ["to", "hrefLeft", "hrefRight"],
-        aspects: ["noHref", "invalidHref", "preferButton"],
-      },
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        devDependencies: ["**/*.test.jsx", "**/*.test.js", "test/**"],
-      },
-    ],
     "no-unused-expressions": 0,
-    "react/jsx-no-literals": [
-      1,
+    "import-helpers/order-imports": [
+      "error",
       {
-        noStrings: false,
+        newlinesBetween: "always",
+        groups: ["module", "/^~//", "/^@//"],
+        alphabetize: {
+          order: "asc",
+          ignoreCase: false,
+        },
       },
     ],
+    "arrow-parens": ["error", "as-needed"],
   },
   settings: {
     "import/resolver": {
       node: {
-        paths: [path.resolve(__dirname, "src/")],
+        extensions: [".js", ".ts", ".jsx", ".tsx"],
       },
     },
   },

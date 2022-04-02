@@ -26,22 +26,19 @@
         "lcov"
     ],
     "include": [
-        "src/**/*.{js,jsx,ts,tsx}"
+        "src/**/*.{js,ts}"
     ],
     "exclude": [
-        "src/**/*.test.{js,jsx}",
-        "src/**/webpack.config.js"
+        "src/**/*.test.{js,ts}"
     ],
     "extension": [
-        ".jsx",
-        ".js",
-        ".ts",
-        "tsx"
-    ],
+			".ts",
+			".js",
+            ".tsx",
+			".jsx"
+		],
     "require": [
-        "@babel/polyfill",
-        "@babel/register",
-        "./test.config.js"
+        "ts-node/register"
     ],
     "cache": false,
     "all": true
